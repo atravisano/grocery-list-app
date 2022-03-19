@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grocery-item.component.scss']
 })
 export class GroceryItemComponent implements OnInit {
+  public isChecked = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public checked(isChecked: boolean) {
+    this.isChecked = isChecked;
   }
 
 }

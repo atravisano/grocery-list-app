@@ -1,3 +1,3 @@
 <mat-list-item>
-  <mat-checkbox>Tomatoes</mat-checkbox>
+  <mat-checkbox (change)="checked($event.checked)"><div [class.checked]="isChecked">Tomatoes</div></mat-checkbox>
 </mat-list-item>
