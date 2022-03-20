@@ -1,5 +1,7 @@
-using GroceryList.Dto;
+using dto = GroceryList.Dto;
+using domain = GroceryList.Domain;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 using System.Net.Mime;
 
 namespace GroceryListAPI.Controllers
@@ -17,10 +19,10 @@ namespace GroceryListAPI.Controllers
         }
 
         [HttpGet(Name = "GetGroceryList")]
-        [Produces(MediaTypeNames.Application.Json, Type = typeof(GroceryItem[]))]
+        [Produces(MediaTypeNames.Application.Json, Type = typeof(dto.GroceryItem[]))]
         public IActionResult Get()
         {
-            return Ok(new GroceryItem[]
+            return Ok(new dto.GroceryItem[]
             {
                 new (){ Id = 1, Name = "Tomatoes" },
                 new (){ Id = 2, Name = "Milk" }

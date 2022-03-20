@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GroceryList.Domain\GroceryList.Domain.csproj" />
     <ProjectReference Include="..\GroceryList.Dto\GroceryList.Dto.csproj" />
   </ItemGroup>
 
