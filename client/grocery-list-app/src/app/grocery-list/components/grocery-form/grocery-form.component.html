@@ -9,7 +9,7 @@
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit" [disabled]="groceryForm.invalid || groceryForm.controls['item'].value?.length === 0">
+      <button mat-raised-button color="primary" type="submit" [disabled]="groceryForm.invalid || !!!groceryForm.controls['item'].value">
         <mat-icon>add</mat-icon> Add Item
       </button>
     </mat-card-actions>

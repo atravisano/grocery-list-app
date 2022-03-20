@@ -21,6 +21,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { GroceryItemComponent } from './grocery-list/components/grocery-item/grocery-item.component';
+import { GroceryItemsComponent } from './grocery-list/containers/grocery-items/grocery-items.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { GroceryItemComponent } from './grocery-list/components/grocery-item/gro
     GroceryFormComponent,
     DashboardComponent,
     NavigationComponent,
-    GroceryItemComponent
+    GroceryItemComponent,
+    GroceryItemsComponent
   ],
   imports: [
     BrowserModule,
