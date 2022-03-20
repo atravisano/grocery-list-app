@@ -1,8 +1,9 @@
-using dto = GroceryList.Dto;
-using domain = GroceryList.Domain;
+using Dto = GroceryList.Dto;
+using Domain = GroceryList.Domain;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 using System.Net.Mime;
+using GroceryList.Business;
+using AutoMapper;
 
 namespace GroceryListAPI.Controllers
 {
@@ -11,22 +12,22 @@ namespace GroceryListAPI.Controllers
     [Produces(MediaTypeNames.Application.Json)]
     public class GroceryListController : ControllerBase
     {
-        private readonly ILogger<GroceryListController> _logger;
+        private readonly IGroceryService _groceryService;
+        private readonly IMapper _mapper;
 
-        public GroceryListController(ILogger<GroceryListController> logger)
+        public GroceryListController(IGroceryService groceryService, IMapper mapper)
         {
-            _logger = logger;
+            _groceryService = groceryService;
+            _mapper = mapper;
         }
 
         [HttpGet(Name = "GetGroceryList")]
-        [Produces(MediaTypeNames.Application.Json, Type = typeof(dto.GroceryItem[]))]
-        public IActionResult Get()
+        [Produces(MediaTypeNames.Application.Json, Type = typeof(Dto.GroceryItem[]))]
+        public IActionResult GetAll()
         {
-            return Ok(new dto.GroceryItem[]
-            {
-                new (){ Id = 1, Name = "Tomatoes" },
-                new (){ Id = 2, Name = "Milk" }
-            });
+            var items = _groceryService.GetAll();
+            var dtos = _mapper.Map<Domain.GroceryItem[], Dto.GroceryItem[]>(items);
+            return Ok(dtos);
         }
     }
 }
