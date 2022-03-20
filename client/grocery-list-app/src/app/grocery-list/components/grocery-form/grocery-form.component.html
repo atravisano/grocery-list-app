@@ -2,17 +2,14 @@
   <mat-card class="form-card">
     <mat-card-content>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Add Item" formControlName="item" />
-        <mat-error *ngIf="groceryForm.controls['item'].hasError('required')">
-          An item is <strong>required</strong>
-        </mat-error>
-        <mat-error *ngIf="groceryForm.controls['item'].hasError('maxLength')">
-          An item must be less than _ characters.
+        <input matInput placeholder="Add Item" formControlName="item" autocomplete="off" />
+        <mat-error *ngIf="groceryForm.controls['item'].hasError('maxlength')">
+          An item must be less than {{ groceryForm.controls['item'].errors?.['maxlength'].requiredLength }} characters.
         </mat-error>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit" [disabled]="groceryForm.invalid">
+      <button mat-raised-button color="primary" type="submit" [disabled]="groceryForm.invalid || groceryForm.controls['item'].value?.length === 0">
         <mat-icon>add</mat-icon> Add Item
       </button>
     </mat-card-actions>

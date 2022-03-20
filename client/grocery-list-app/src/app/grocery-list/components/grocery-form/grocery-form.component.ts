@@ -8,7 +8,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class GroceryFormComponent {
   public groceryForm = this.fb.group({
-    item: [null, [Validators.required, Validators.maxLength(255)]],
+    item: [null, [Validators.maxLength(255)]],
   });
 
   constructor(private fb: FormBuilder) {}
