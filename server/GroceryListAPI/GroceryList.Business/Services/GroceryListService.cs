@@ -1,13 +1,14 @@
 ﻿using GroceryList.Domain;
 using GroceryList.Domain.Data;
+using Dto = GroceryList.Dto;
 
 namespace GroceryList.Business
 {
-    public class GroceryService : IGroceryService
+    public class GroceryListService : IGroceryListService
     {
         private readonly GroceryListContext _context;
 
-        public GroceryService(GroceryListContext context)
+        public GroceryListService(GroceryListContext context)
         {
             _context = context;
         }
@@ -21,6 +22,19 @@ namespace GroceryList.Business
             }
 
             return items.ToArray();
+        }
+
+        public GroceryItem Create(Dto.CreateGroceryItem item)
+        {
+            var newItem = new GroceryItem()
+            {
+                Name = item.Name
+            };
+
+            _context.GroceryItems?.Add(newItem);
+            _context.SaveChanges();
+
+            return newItem;
         }
     }
 }

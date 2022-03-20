@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using domain = GroceryList.Domain;
-using dto = GroceryList.Dto;
+using Domain = GroceryList.Domain;
+using Dto = GroceryList.Dto;
 
 namespace GroceryList.Api.Core
 {
@@ -8,7 +8,7 @@ namespace GroceryList.Api.Core
     {
         public MappingProfile()
         {
-            CreateMap<domain.GroceryItem, dto.GroceryItem>();
+            CreateMap<Domain.GroceryItem, Dto.GroceryItem>();
         }
     }
 }

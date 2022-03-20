@@ -12,7 +12,7 @@ namespace GroceryList.Business
     {
         public static void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration)
         {
-            services.AddScoped<IGroceryService, GroceryService>();
+            services.AddScoped<IGroceryListService, GroceryListService>();
         }
     }
 }

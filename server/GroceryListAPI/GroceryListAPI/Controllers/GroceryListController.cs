@@ -12,12 +12,12 @@ namespace GroceryListAPI.Controllers
     [Produces(MediaTypeNames.Application.Json)]
     public class GroceryListController : ControllerBase
     {
-        private readonly IGroceryService _groceryService;
+        private readonly IGroceryListService _groceryListService;
         private readonly IMapper _mapper;
 
-        public GroceryListController(IGroceryService groceryService, IMapper mapper)
+        public GroceryListController(IGroceryListService groceryService, IMapper mapper)
         {
-            _groceryService = groceryService;
+            _groceryListService = groceryService;
             _mapper = mapper;
         }
 
@@ -25,7 +25,7 @@ namespace GroceryListAPI.Controllers
         [Produces(MediaTypeNames.Application.Json, Type = typeof(Dto.GroceryItem[]))]
         public IActionResult GetAll()
         {
-            var items = _groceryService.GetAll();
+            var items = _groceryListService.GetAll();
             var dtos = _mapper.Map<Domain.GroceryItem[], Dto.GroceryItem[]>(items);
             return Ok(dtos);
         }
