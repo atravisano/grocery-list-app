@@ -1,4 +1,4 @@
-# GroceryListApp
+# Grocery Shopping List App
 
 An Angular 13.3.0 app that can view the current items on their list, add items, cross items off their list, or delete items.
 

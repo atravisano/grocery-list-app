@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GroceryFormComponent } from './grocery-list/components/grocery-form/grocery-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
-import { NavigationComponent } from './shared/components/navigation/navigation.component';
+import { NavRootComponent } from './shared/components/nav-root/nav-root.component';
 import { GroceryItemComponent } from './grocery-list/components/grocery-item/grocery-item.component';
 import { GroceryItemsComponent } from './grocery-list/containers/grocery-items/grocery-items.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +16,7 @@ import { SpinnerDialogComponent } from './shared/components/spinner-dialog/spinn
   declarations: [
     AppComponent,
     GroceryFormComponent,
-    NavigationComponent,
+    NavRootComponent,
     GroceryItemComponent,
     GroceryItemsComponent,
     SpinnerDialogComponent
