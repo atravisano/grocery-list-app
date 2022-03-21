@@ -13,7 +13,7 @@ builder.Services.AddCors(options =>
     {
         builder
             .WithOrigins(new string[] { "http://localhost:4200" })
-            .WithMethods("GET", "POST", "PUT", "OPTIONS")
+            .WithMethods("GET", "POST", "PUT", "OPTIONS", "DELETE")
             .WithHeaders("Origin", "Content-Type");
             
     });
