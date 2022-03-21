@@ -1,12 +1,25 @@
-# Coding Exercise
+# Grocery Shopping List App
 
-Create a simple shopping list web application. A user should be able to view the current items on their list, add items, and delete items.
+## Summary
 
-The frontend should be in Angular, and the backend should be .NET Core (or .NET 5/6). The backend should store the shopping list items in a database using Entity Framework Core.
+A simple shopping list web application. A user can view the current items on their list, add items, cross items off their list, or delete items.
 
-What we're looking for when we review your project:
-Does it work?
-Were instructions followed?
-Is the code clean and well-crafted?
-Are standard best practices being followed?
-Are project files well-organized?
+## Frontend
+
+The frontend uses Angular.
+
+For more details, please review the readme file in the [`client/grocery-list-app`](client/grocery-list-app/README.md).
+
+## Backend
+
+A .NET API project that can create and delete items from a shopping list.
+
+For more details, please review the readme file in the [`server/GroceryListAPI`](server/GroceryListAPI/README.md).
+
+## Goals of Project
+
+- Does it work?
+- Were instructions followed?
+- Is the code clean and well-crafted?
+- Are standard best practices being followed?
+- Are project files well-organized?
