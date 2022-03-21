@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "GroceryListAPI": {
+    "GroceryList.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
