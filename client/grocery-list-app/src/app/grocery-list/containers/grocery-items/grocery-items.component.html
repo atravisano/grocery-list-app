@@ -1,7 +1,9 @@
 <mat-card>
   <mat-card-content *ngIf="groceryList$ | async as groceryList">
-    <mat-list role="list">
-      <app-grocery-item *ngFor="let groceryItem of groceryList" [groceryItem]="groceryItem"></app-grocery-item>
-    </mat-list>
+    <div class="list">
+      <mat-list>
+        <app-grocery-item *ngFor="let groceryItem of groceryList" [groceryItem]="groceryItem"></app-grocery-item>
+      </mat-list>
+    </div>
   </mat-card-content>
 </mat-card>

@@ -20,6 +20,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { GroceryItemComponent } from './grocery-list/components/grocery-item/grocery-item.component';
 import { GroceryItemsComponent } from './grocery-list/containers/grocery-items/grocery-items.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -50,6 +52,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatListModule,
     MatCheckboxModule,
+    MatProgressBarModule,
+    MatSnackBarModule,
     HttpClientModule
   ],
   providers: [],

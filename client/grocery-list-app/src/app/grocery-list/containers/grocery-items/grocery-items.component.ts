@@ -14,10 +14,7 @@ export class GroceryItemsComponent implements OnInit {
   constructor(private groceryListService: GroceryListService) { }
 
   ngOnInit(): void {
-    this.groceryList$ = this.groceryListService.getAllGroceryItems()
-      .pipe(
-        take(1)
-      );
+    this.groceryList$ = this.groceryListService.getAllGroceryItems();
   }
 
 }
