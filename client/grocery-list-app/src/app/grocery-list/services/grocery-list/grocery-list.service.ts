@@ -23,6 +23,10 @@ export class GroceryListService {
     return this.httpClient.post<GroceryItem>(`${this.baseAddress}GroceryItem`, { name: itemName });
   }
 
+  public delete(itemId: number): Observable<void> {
+    return this.httpClient.delete<void>(`${this.baseAddress}GroceryItem/${itemId}`);
+  }
+
   public refreshItems(): void {
     this.refreshStream.next();
   }

@@ -1,9 +1,14 @@
 <mat-card>
+  <mat-card-actions align="end">
+    <button mat-button (click)="removeItems()" [disabled]="(selectionCount$ | async) === 0">
+      <mat-icon class="delete-icon">delete_sweep</mat-icon> Remove Checked Items
+    </button>
+  </mat-card-actions>
   <mat-card-content *ngIf="groceryList$ | async as groceryList">
     <div class="list">
-      <mat-list>
+      <mat-selection-list (selectionChange)="onSelectionChange()">
         <app-grocery-item *ngFor="let groceryItem of groceryList" [groceryItem]="groceryItem"></app-grocery-item>
-      </mat-list>
+      </mat-selection-list>
     </div>
   </mat-card-content>
 </mat-card>

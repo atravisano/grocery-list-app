@@ -1,5 +1,3 @@
-<mat-list-item *ngIf="groceryItem" [id]="groceryItem.id">
-  <mat-checkbox (change)="checked($event.checked)">
-    <div [class.checked]="isChecked">{{ groceryItem.name | titlecase }}</div>
-  </mat-checkbox>
-</mat-list-item>
+<mat-list-option #checkbox checkboxPosition="before" *ngIf="groceryItem" [id]="groceryItem.id" [value]="groceryItem.id">
+    <div [class.checked]="checkbox.selected">{{ groceryItem.name | titlecase }}</div>
+</mat-list-option>
