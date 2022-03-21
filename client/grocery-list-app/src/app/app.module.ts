@@ -10,6 +10,7 @@ import { GroceryItemComponent } from './grocery-list/components/grocery-item/gro
 import { GroceryItemsComponent } from './grocery-list/containers/grocery-items/grocery-items.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material.module';
+import { SpinnerDialogComponent } from './shared/components/spinner-dialog/spinner-dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MaterialModule } from './material.module';
     GroceryFormComponent,
     NavigationComponent,
     GroceryItemComponent,
-    GroceryItemsComponent
+    GroceryItemsComponent,
+    SpinnerDialogComponent
   ],
   imports: [
     BrowserModule,
