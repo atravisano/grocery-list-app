@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { GroceryItem } from '../../models/GroceryItem';
 
 @Component({
   selector: 'app-grocery-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grocery-item.component.scss']
 })
 export class GroceryItemComponent implements OnInit {
+  @Input()
+  public groceryItem!: GroceryItem;
   public isChecked = false;
 
   constructor() { }

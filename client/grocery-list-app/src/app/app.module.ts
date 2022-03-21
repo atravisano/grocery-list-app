@@ -22,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { GroceryItemComponent } from './grocery-list/components/grocery-item/grocery-item.component';
 import { GroceryItemsComponent } from './grocery-list/containers/grocery-items/grocery-items.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { GroceryItemsComponent } from './grocery-list/containers/grocery-items/g
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
