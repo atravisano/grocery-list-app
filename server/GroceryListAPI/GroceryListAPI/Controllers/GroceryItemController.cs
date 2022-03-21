@@ -34,5 +34,13 @@ namespace GroceryListAPI.Controllers
             return Created(location ?? "", dto);
         }
 
+        [HttpDelete("{id}", Name = "Delete Grocery Item")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        public IActionResult Delete([FromRoute]int id)
+        {
+            _groceryListService.Remove(id);
+            return NoContent();
+        }
+
     }
 }

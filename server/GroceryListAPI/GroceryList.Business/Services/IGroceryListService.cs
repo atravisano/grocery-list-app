@@ -6,5 +6,6 @@ namespace GroceryList.Business
     {
         GroceryItem Create(Dto.CreateGroceryItem item);
         GroceryItem[] GetAll();
+        void Remove(int id);
     }
 }

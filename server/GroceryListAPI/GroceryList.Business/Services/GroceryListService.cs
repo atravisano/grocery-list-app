@@ -36,5 +36,17 @@ namespace GroceryList.Business
 
             return newItem;
         }
+
+        public void Remove(int id)
+        {
+            var item = _context.GroceryItems?.FirstOrDefault(x => x.Id == id);
+            if(item == null)
+            {
+                throw new Exception();
+            }
+
+            _context.GroceryItems?.Remove(item);
+            _context.SaveChanges();
+        }
     }
 }
