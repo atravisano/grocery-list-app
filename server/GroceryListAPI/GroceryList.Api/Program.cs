@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 const string corsPolicyName = "_OnlyConfiguredOrigins";
@@ -6,14 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+var origins = builder.Configuration.GetValue<string>("CorsOrigins").Split(";");
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(corsPolicyName,
     builder =>
     {
         builder
-            .WithOrigins(new string[] { "http://localhost:4200" })
-            .WithMethods("GET", "POST", "PUT", "OPTIONS", "DELETE")
+            .WithOrigins(origins)
+            .WithMethods("GET", "POST", "OPTIONS", "DELETE")
             .WithHeaders("Origin", "Content-Type");
             
     });
@@ -21,7 +24,10 @@ builder.Services.AddCors(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options => {
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
+    options.SwaggerDoc("v1", new OpenApiInfo() { Title = "Grocery Shopping List API", Version = "v1" });
+});
 
 // Dependency Injection
 builder.Services.AddAutoMapper(typeof(Program).GetTypeInfo().Assembly);

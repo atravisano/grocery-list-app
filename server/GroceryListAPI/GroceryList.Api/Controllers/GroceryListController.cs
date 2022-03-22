@@ -8,7 +8,7 @@ using AutoMapper;
 namespace GroceryListAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("groceries")]
     [Produces(MediaTypeNames.Application.Json)]
     public class GroceryListController : ControllerBase
     {
@@ -21,7 +21,12 @@ namespace GroceryListAPI.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet(Name = "GetGroceryList")]
+        /// <summary>
+        /// Grocery List
+        /// </summary>
+        /// <returns>List of all grocery shopping items</returns>
+        /// <response code="200">Success</response>
+        [HttpGet(Name = "Grocery List")]
         [Produces(MediaTypeNames.Application.Json, Type = typeof(Dto.GroceryItem[]))]
         public IActionResult GetAll()
         {

@@ -3,11 +3,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GroceryList.Domain
 {
@@ -15,9 +10,7 @@ namespace GroceryList.Domain
     {
         public static void ConfigureServices(IServiceCollection services, IConfigurationRoot configuration)
         {
-            services
-                .AddEntityFrameworkSqlServer()
-                .AddDbContext<GroceryListContext>(p => p.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=GroceryList;Trusted_Connection=True;MultipleActiveResultSets=true"));
+            services.AddDbContext<GroceryListContext>(p => p.UseSqlServer(configuration.GetConnectionString("localdb")));
         }
 
         public static void Configure(IApplicationBuilder app)
