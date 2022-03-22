@@ -9,12 +9,4 @@ import { GroceryItem } from '../../models/GroceryItem';
 export class GroceryItemComponent {
   @Input()
   public groceryItem!: GroceryItem;
-  public isChecked = false;
-
-  constructor() { }
-
-  public checked(isChecked: boolean) {
-    this.isChecked = isChecked;
-  }
-
 }

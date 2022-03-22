@@ -19,6 +19,9 @@ export class GroceryFormComponent {
               private groceryListService: GroceryListService,
               private snackBarService: MatSnackBar) {}
 
+  /**
+   * Add a grocery item to the list.
+   */
   public onSubmit(): void {
     this.isLoading = true;
     this.groceryListService.create(this.groceryForm.controls['item'].value)

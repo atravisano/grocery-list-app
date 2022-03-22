@@ -27,7 +27,10 @@ export class GroceryItemsComponent implements OnInit {
     this.selectionCount$ = this.selectionCountStream.asObservable();
   }
 
-  public removeItems() {
+  /**
+   * Removes one or more grocery items based on the user's selection.
+   */
+  public removeItems(): void {
     const dialogRef = this.dialogService.open(SpinnerDialogComponent, { disableClose: true, panelClass: 'no-panel' });
     of(this.selectionList.selectedOptions.selected.map<number>(matListOption => matListOption.value))
       .pipe(
@@ -49,6 +52,9 @@ export class GroceryItemsComponent implements OnInit {
         });
   }
 
+  /**
+   * Update the selection count each time the selection list changed.
+   */
   public onSelectionChange(): void {
     this.selectionCountStream.next(this.selectionList.selectedOptions.selected.length);
   }
