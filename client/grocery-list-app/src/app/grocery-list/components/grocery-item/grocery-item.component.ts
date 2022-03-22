@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { GroceryItem } from '../../models/GroceryItem';
 
 @Component({
@@ -6,15 +6,12 @@ import { GroceryItem } from '../../models/GroceryItem';
   templateUrl: './grocery-item.component.html',
   styleUrls: ['./grocery-item.component.scss']
 })
-export class GroceryItemComponent implements OnInit {
+export class GroceryItemComponent {
   @Input()
   public groceryItem!: GroceryItem;
   public isChecked = false;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   public checked(isChecked: boolean) {
     this.isChecked = isChecked;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, of, take, tap } from 'rxjs';
@@ -9,7 +9,7 @@ import { GroceryListService } from '../../services/grocery-list/grocery-list.ser
   templateUrl: './grocery-form.component.html',
   styleUrls: ['./grocery-form.component.scss']
 })
-export class GroceryFormComponent implements OnInit {
+export class GroceryFormComponent {
   public groceryForm = this.fb.group({
     item: [null, [Validators.maxLength(255)]],
   });
@@ -18,9 +18,6 @@ export class GroceryFormComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private groceryListService: GroceryListService,
               private snackBarService: MatSnackBar) {}
-
-  public ngOnInit(): void {
-  }
 
   public onSubmit(): void {
     this.isLoading = true;
