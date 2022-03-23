@@ -12,7 +12,7 @@ import { GroceryListService } from '../../services/grocery-list/grocery-list.ser
 export class GroceryFormComponent {
   public groceryForm = this.fb.group({
     // Note: `Validator.required` would typically be added here.
-    // It was not because of the input turning red after form submission by default in Angular Material.
+    // It was not added because of the input turning red after form submission by default in Angular Material.
     // To resolve this, the submit button has logic to keep form input required.
     item: [null, [Validators.maxLength(255)]],
   });

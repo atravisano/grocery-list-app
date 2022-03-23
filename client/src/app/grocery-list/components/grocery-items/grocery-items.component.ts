@@ -13,7 +13,9 @@ import { GroceryListService } from '../../services/grocery-list/grocery-list.ser
   styleUrls: ['./grocery-items.component.scss']
 })
 export class GroceryItemsComponent implements OnInit {
-  @ViewChild(MatSelectionList) public selectionList!: MatSelectionList;
+  @ViewChild(MatSelectionList)
+  public selectionList!: MatSelectionList;
+
   public groceryList$!: Observable<GroceryItem[]>;
   public selectionCount$!: Observable<number>;
   private selectionCountStream = new BehaviorSubject<number>(0);
