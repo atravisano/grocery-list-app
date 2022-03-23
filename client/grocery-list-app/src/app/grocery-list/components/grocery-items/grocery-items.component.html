@@ -6,7 +6,7 @@
   </mat-card-actions>
   <mat-card-content *ngIf="groceryList$ | async as groceryList">
     <div class="list">
-      <mat-selection-list (selectionChange)="onSelectionChange()">
+      <mat-selection-list (selectionChange)="onSelectionChange()" aria-label="Grocery List">
         <app-grocery-item *ngFor="let groceryItem of groceryList" [groceryItem]="groceryItem"></app-grocery-item>
       </mat-selection-list>
     </div>
