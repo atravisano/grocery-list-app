@@ -2,7 +2,7 @@
 
 ## Summary
 
-A simple shopping list web application. A user can view the current items on their list, add items, cross items off their list, or delete items.
+A shopping list web application. A user can view the current items on their list, add items, cross items off their list, or delete items.
 
 ## Frontend
 

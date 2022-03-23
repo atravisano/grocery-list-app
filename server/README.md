@@ -1,6 +1,6 @@
 # Grocery List API
 
-A .NET 6 application that stores the shopping list items in a database using Entity Framework Core.
+A .NET 6 application that stores, adds, or deletes shopping list items in a database using Entity Framework Core.
 
 ## Project Structure
 
