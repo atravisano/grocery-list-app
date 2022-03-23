@@ -1,4 +1,5 @@
-﻿using GroceryList.Domain;
+﻿using GroceryList.Business.Exceptions;
+using GroceryList.Domain;
 using GroceryList.Domain.Data;
 using Dto = GroceryList.Dto;
 
@@ -40,9 +41,9 @@ namespace GroceryList.Business
         public void Remove(int id)
         {
             var item = _context.GroceryItems?.FirstOrDefault(x => x.Id == id);
-            if(item == null)
+            if (item is null)
             {
-                throw new Exception();
+                throw new GroceryItemNotFoundException(id);
             }
 
             _context.GroceryItems?.Remove(item);
