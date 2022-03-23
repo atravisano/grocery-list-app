@@ -1,5 +1,5 @@
-using dto = GroceryList.Dto;
-using domain = GroceryList.Domain;
+using Dto = GroceryList.Dto;
+using Domain = GroceryList.Domain;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Mime;
 using GroceryList.Business;
@@ -31,13 +31,13 @@ namespace GroceryListAPI.Controllers
         /// <response code="201">Item added</response>
         /// <response code="400">One or more validation issues with the request</response>
         [HttpPost(Name = "Create Grocery Item")]
-        [Produces(MediaTypeNames.Application.Json, Type = typeof(dto.GroceryItem))]
+        [Produces(MediaTypeNames.Application.Json, Type = typeof(Dto.GroceryItem))]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ProblemDetails))]
-        public IActionResult Post([FromBody, Required] dto.CreateGroceryItem item)
+        public IActionResult Post([FromBody, Required] Dto.CreateGroceryItem item)
         {
             var newItem = _groceryListService.Create(item);
-            var dto = _mapper.Map<domain.GroceryItem, dto.GroceryItem>(newItem);
+            var dto = _mapper.Map<Domain.GroceryItem, Dto.GroceryItem>(newItem);
             return Created("/groceries", dto);
         }
 

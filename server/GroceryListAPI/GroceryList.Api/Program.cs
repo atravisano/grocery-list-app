@@ -4,8 +4,6 @@ using System.Reflection;
 const string corsPolicyName = "_OnlyConfiguredOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 
 var origins = builder.Configuration.GetValue<string>("CorsOrigins").Split(";");
