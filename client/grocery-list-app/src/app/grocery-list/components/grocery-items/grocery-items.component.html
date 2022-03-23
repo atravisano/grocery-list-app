@@ -4,11 +4,19 @@
       <mat-icon class="delete-icon">delete_sweep</mat-icon> Remove Checked Items
     </button>
   </mat-card-actions>
-  <mat-card-content *ngIf="groceryList$ | async as groceryList">
+  <mat-card-content>
     <div class="list">
-      <mat-selection-list (selectionChange)="onSelectionChange()" aria-label="Grocery List">
-        <app-grocery-item *ngFor="let groceryItem of groceryList" [groceryItem]="groceryItem"></app-grocery-item>
-      </mat-selection-list>
+      <ng-container *ngIf="groceryList$ | async as groceryList; else loading;">
+        <ng-container *ngIf="groceryList.length > 0">
+          <mat-selection-list  (selectionChange)="onSelectionChange()" aria-label="Grocery List">
+            <app-grocery-item *ngFor="let groceryItem of groceryList" [groceryItem]="groceryItem"></app-grocery-item>
+          </mat-selection-list>
+        </ng-container>
+        <h3 *ngIf="groceryList.length === 0">No Items</h3>
+      </ng-container>
+      <ng-template #loading>
+        <mat-spinner class="spinner"></mat-spinner>
+      </ng-template>
     </div>
   </mat-card-content>
 </mat-card>

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSelectionList } from '@angular/material/list';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { BehaviorSubject, combineLatest, Observable, of, switchMap, take, tap } from 'rxjs';
+import { BehaviorSubject, catchError, combineLatest, Observable, of, switchMap, take, tap } from 'rxjs';
 import { SpinnerDialogComponent } from 'src/app/shared/components/spinner-dialog/spinner-dialog.component';
 import { GroceryItem } from '../../models/GroceryItem';
 import { GroceryListService } from '../../services/grocery-list/grocery-list.service';
@@ -23,7 +23,13 @@ export class GroceryItemsComponent implements OnInit {
               private dialogService: MatDialog) { }
 
   ngOnInit(): void {
-    this.groceryList$ = this.groceryListService.getAllGroceryItems();
+    this.groceryList$ = this.groceryListService.getAll()
+      .pipe(
+        catchError(error => {
+          this.snackBarService.open('Grocery list could not load.', 'Dismiss');
+          throw error;
+        })
+      )
     this.selectionCount$ = this.selectionCountStream.asObservable();
   }
 

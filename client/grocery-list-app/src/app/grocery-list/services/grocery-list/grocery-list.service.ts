@@ -18,7 +18,7 @@ export class GroceryListService {
    * @see {@link refreshItems}
    * @returns List of grocery items.
    */
-  public getAllGroceryItems(): Observable<GroceryItem[]> {
+  public getAll(): Observable<GroceryItem[]> {
     return this.refreshStream.asObservable()
       .pipe(
         switchMap(() => this.httpClient.get<GroceryItem[]>(this.getUrl()))
@@ -44,7 +44,7 @@ export class GroceryListService {
 
   /**
    * Retrieves the latest list returned from `getAllGroceryItems`.
-   * @see {@link getAllGroceryItems}
+   * @see {@link getAll}
    */
   public refreshItems(): void {
     this.refreshStream.next();
