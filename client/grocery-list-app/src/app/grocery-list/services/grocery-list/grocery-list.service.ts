@@ -21,7 +21,7 @@ export class GroceryListService {
   public getAllGroceryItems(): Observable<GroceryItem[]> {
     return this.refreshStream.asObservable()
       .pipe(
-        switchMap(() => this.httpClient.get<GroceryItem[]>(`${this.baseAddress}GroceryList`))
+        switchMap(() => this.httpClient.get<GroceryItem[]>(this.getUrl()))
       )
   }
 
@@ -31,7 +31,7 @@ export class GroceryListService {
    * @returns The new grocery item.
    */
   public create(itemName: string): Observable<GroceryItem> {
-    return this.httpClient.post<GroceryItem>(`${this.baseAddress}GroceryItem`, { name: itemName });
+    return this.httpClient.post<GroceryItem>(this.getUrl(), { name: itemName });
   }
 
   /**
@@ -39,7 +39,7 @@ export class GroceryListService {
    * @param itemId ID of the grocery item.
    */
   public delete(itemId: number): Observable<void> {
-    return this.httpClient.delete<void>(`${this.baseAddress}GroceryItem/${itemId}`);
+    return this.httpClient.delete<void>(this.getUrl(itemId.toString()));
   }
 
   /**
@@ -48,5 +48,22 @@ export class GroceryListService {
    */
   public refreshItems(): void {
     this.refreshStream.next();
+  }
+
+  /**
+   *
+   * @param relativePath Optional relative path to the base address.
+   * @example
+   * // Base address is http://localhost
+   * const url = this.getBaseAddress(); // http://localhost/groceries
+   * const urlWithRelativePath = this.getBaseAddress('1'); // http://localhost/groceries/1
+   * @returns The complete URL
+   */
+  private getUrl(relativePath?: string): string {
+    let baseAddress = `${this.baseAddress}groceries`;
+    if (relativePath) {
+      baseAddress += `/${relativePath}`;
+    }
+    return baseAddress;
   }
 }
