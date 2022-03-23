@@ -22,7 +22,7 @@ The Data transfer objects project is meant to create a simple model for the call
 
 ## Running the Project
 
-First, you'll need .NET 6 or Visual Studio 2022 installed.
+First, you'll need .NET 6 or Visual Studio 2022 installed. You will also need SQL Server installed.
 
 Then, you'll need to update your database to the current version. You can use the command prompt to update your entity framework database using `dotnet ef` or you can use the Package Manager Console (with the default project pointing to `core-blog.domain`) and run `Update-Database`. This runs all of the migrations and creates the database in its current form
 

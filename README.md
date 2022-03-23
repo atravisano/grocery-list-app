@@ -8,13 +8,13 @@ A simple shopping list web application. A user can view the current items on the
 
 The frontend uses Angular.
 
-For more details, please review the readme file in the [`client/grocery-list-app`](client/grocery-list-app/README.md).
+For more details, please review the readme file in the [`client/` directory](client/README.md).
 
 ## Backend
 
 A .NET API project that can create and delete items from a shopping list.
 
-For more details, please review the readme file in the [`server/GroceryListAPI`](server/GroceryListAPI/README.md).
+For more details, please review the readme file in the [`server/` directory](server/README.md).
 
 ## Goals of Project
 
