@@ -6,13 +6,13 @@ A simple shopping list web application. A user can view the current items on the
 
 ## Frontend
 
-The frontend uses Angular.
+An Angular project.
 
 For more details, please review the readme file in the [`client/` directory](client/README.md).
 
 ## Backend
 
-A .NET API project that can create and delete items from a shopping list.
+A .NET API project.
 
 For more details, please review the readme file in the [`server/` directory](server/README.md).
 
@@ -23,3 +23,10 @@ For more details, please review the readme file in the [`server/` directory](ser
 - Is the code clean and well-crafted?
 - Are standard best practices being followed?
 - Are project files well-organized?
+
+## Running the projects
+
+To run the applications:
+
+- In one terminal (or Visual Studio 2022), follow the directions in the [`server/` directory](server/README.md#running-the-project).
+- In another terminal, follow the directions in the [`client/` directory](client/README.md#running-the-project).
