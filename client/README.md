@@ -1,10 +1,10 @@
 # Grocery Shopping List App
 
-An Angular 13 app that allows users to view, add, delete and cross items off their shopping list.
+This is an Angular 13 app that allows users to view, add, delete and cross items off their shopping list.
 
 ## Project Structure
 
-This app uses a scalable folder structure in `src/app/` to seperate components, models, and services into their respective groups.
+This app uses a scalable folder structure in `src/app/` to separate components, models, and services into their respective groups.
 
 ```text
 page-a

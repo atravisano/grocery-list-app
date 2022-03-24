@@ -1,6 +1,6 @@
 # Grocery List API
 
-A .NET 6 application that stores, adds, or deletes shopping list items in a database using Entity Framework Core.
+This is a .NET 6 application that stores, adds, or deletes shopping list items in a database using Entity Framework Core.
 
 ## Project Structure
 
@@ -18,7 +18,7 @@ This project stores Entity Framework models and configuration. As a rule, domain
 
 ### DTO
 
-The Data Transfer Objects project is meant to create a simple model for the calling code that does not show sensitive or irrelevant data to the calling client. DTOs are common when mapping from an Entity Framework model.
+The Data Transfer Objects project is designed to create a simple model for the calling code that does not show sensitive or irrelevant data to the calling client. DTOs are common when mapping from an Entity Framework model.
 
 ## Running the Project
 

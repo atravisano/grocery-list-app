@@ -1,20 +1,18 @@
 # Grocery Shopping List App
 
-## Summary
-
 This is a shopping list web application. Users can view, add, delete and cross items off their shopping list.
 
 ![Demo Image](images/demo.jpg)
 
 ## Frontend
 
-An Angular project.
+This is an Angular project.
 
 For more details, please review the readme file in the [`client/` directory](client/README.md).
 
 ## Backend
 
-A .NET API project.
+This is a .NET API project.
 
 For more details, please review the readme file in the [`server/` directory](server/README.md).
 
