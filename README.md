@@ -2,7 +2,7 @@
 
 ## Summary
 
-A shopping list web application. A user can view the current items on their list, add items, cross items off their list, or delete items.
+This is a shopping list web application. Users can view, add, delete and cross items off their shopping list.
 
 ![Demo Image](images/demo.jpg)
 

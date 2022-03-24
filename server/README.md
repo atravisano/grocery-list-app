@@ -6,24 +6,32 @@ A .NET 6 application that stores, adds, or deletes shopping list items in a data
 
 ### API
 
-An ASP.NET Core Web API project used to deliver data to any client.
+This is an ASP.NET Core Web API project used to deliver data to any client.
 
 ### Business
 
-Business is meant for services. For example, retrieving grocery items from a Grocery-List service.
+This Business project is meant for services. For example, retrieving grocery items from a Grocery-List service.
 
 ### Domain
 
-Stores Entity Framework models and configuration. As a rule, domain logic should be stored in the Business project.
+This project stores Entity Framework models and configuration. As a rule, domain logic should be stored in the Business project.
 
 ### DTO
 
-The Data transfer objects project is meant to create a simple model for the calling code that does not show sensitive data and does not show irrelevant data to the calling client. DTOs are common when mapping from an Entity Framework model.
+The Data Transfer Objects project is meant to create a simple model for the calling code that does not show sensitive or irrelevant data to the calling client. DTOs are common when mapping from an Entity Framework model.
 
 ## Running the Project
 
-First, you'll need .NET 6 or Visual Studio 2022 installed. You will also need SQL Server installed.
+To use this demo, you will first need to install .NET 6 or Visual Studio 2022. You will also need to install SQL Server.
 
-Then, you'll need to update your database to the current version. You can use the command prompt to update your entity framework database using `dotnet ef database update --project GroceryList.Api/GroceryList.Api.csproj` or you can use the Package Manager Console (with the default project pointing to `GroceryList.Api`) and run `Update-Database`. This runs all of the migrations and creates the database in its current form.
+You will then need to update your database to the latest version.
 
-Finally, run the project in Visual Studio 2022 or by running the command `dotnet run --project .\GroceryList.Api\GroceryList.Api.csproj`. Optionally, you can open your browser and go to <https://localhost:7050/swagger/index.html> if you'd like to test the API with Swagger.
+### Command Line
+
+Use the command prompt to update your entity framework database using `dotnet ef database update --project GroceryList.Api/GroceryList.Api.csproj`.
+
+### Package Manager Console
+
+Use the Package Manager Console in Visual Studio (with the default project `GroceryList.Api` selected) and run `Update-Database`. This runs all of the migrations and creates the database in its current form.
+
+Finally, run the project in Visual Studio 2022 or by running the command `dotnet run --project .\GroceryList.Api\GroceryList.Api.csproj`. If you would like to test the API with Swagger, you can open your browser and go to <https://localhost:7050/swagger/index.html>.
