@@ -4,6 +4,8 @@
 
 A shopping list web application. A user can view the current items on their list, add items, cross items off their list, or delete items.
 
+![Demo Image](images/demo.jpg)
+
 ## Frontend
 
 An Angular project.
