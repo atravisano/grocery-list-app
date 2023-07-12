@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, of, take, tap } from 'rxjs';
 import { GroceryListService } from '../../services/grocery-list/grocery-list.service';
@@ -18,7 +18,7 @@ export class GroceryFormComponent {
   });
   public isLoading = false;
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               private groceryListService: GroceryListService,
               private snackBarService: MatSnackBar) {}
 
