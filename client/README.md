@@ -15,7 +15,7 @@ page-a
  ┃ ┃ ┣ *
  ┃ ┗ component-c
  ┃ ┃ ┣ *
- ┣ cotainers
+ ┣ containers
  ┃ ┣ component-d
  ┃ ┃ ┣ *
  ┃ ┣ component-e
