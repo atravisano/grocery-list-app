@@ -1,8 +1,8 @@
 import { ComponentFixture, fakeAsync, flush, TestBed } from '@angular/core/testing';
-import { MatCardModule } from '@angular/material/card';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar, MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';
 import { catchError, of, take, throwError } from 'rxjs';
 import { GroceryListService } from '../../services/grocery-list/grocery-list.service';
 

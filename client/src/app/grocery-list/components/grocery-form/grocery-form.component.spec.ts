@@ -1,13 +1,13 @@
 import { waitForAsync, ComponentFixture, TestBed, fakeAsync, flush } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
+import { MatLegacyButtonModule as MatButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
+import { MatLegacyInputModule as MatInputModule } from '@angular/material/legacy-input';
 
 import { GroceryFormComponent } from './grocery-form.component';
 import { GroceryListService } from '../../services/grocery-list/grocery-list.service';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar, MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/legacy-snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { of, throwError } from 'rxjs';
 
