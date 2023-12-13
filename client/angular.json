@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "grocery-list-app:build:production"
+              "buildTarget": "grocery-list-app:build:production"
             },
             "development": {
-              "browserTarget": "grocery-list-app:build:development"
+              "buildTarget": "grocery-list-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "grocery-list-app:build"
+            "buildTarget": "grocery-list-app:build"
           }
         },
         "test": {
