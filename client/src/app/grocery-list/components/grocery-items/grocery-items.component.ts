@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
-import { MatLegacySelectionList as MatSelectionList } from '@angular/material/legacy-list';
-import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSelectionList } from '@angular/material/list';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, catchError, combineLatest, Observable, of, switchMap, take, tap } from 'rxjs';
 import { SpinnerDialogComponent } from 'src/app/shared/components/spinner-dialog/spinner-dialog.component';
 import { GroceryItem } from '../../models/GroceryItem';
