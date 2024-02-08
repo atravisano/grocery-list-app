@@ -40,24 +40,16 @@ export class GroceryItemsComponent implements OnInit {
    */
   public removeItems(): void {
     const dialogRef = this.dialogService.open(SpinnerDialogComponent, { disableClose: true, panelClass: 'no-panel' });
-    of(this.selectionList.selectedOptions.selected.map<number>(matListOption => matListOption.value))
+    const selectedIds = this.getSelectedIds()
+    combineLatest(selectedIds.map(selectedId => this.deleteItem(selectedId)))
       .pipe(
-        switchMap(selectedIds =>
-          combineLatest(selectedIds.map(selectedId =>
-            this.groceryListService.delete(selectedId)
-              .pipe(
-                take(1)
-              )
-          ))
-        ),
         tap(responses => {
           this.selectionCountStream.next(0);
           this.snackBarService.open(`${responses.length} item(s) removed.`, 'Dismiss');
-        })
-      ).subscribe(() => {
           this.groceryListService.refreshItems();
           dialogRef.close();
-        });
+        })
+      ).subscribe();
   }
 
   /**
@@ -67,4 +59,14 @@ export class GroceryItemsComponent implements OnInit {
     this.selectionCountStream.next(this.selectionList.selectedOptions.selected.length);
   }
 
+  private getSelectedIds(): number[] {
+    return this.selectionList.selectedOptions.selected.map<number>(matListOption => matListOption.value);
+  }
+
+  private deleteItem(id: number): Observable<void> {
+    return this.groceryListService.delete(id)
+      .pipe(
+        take(1)
+      )
+  }
 }
