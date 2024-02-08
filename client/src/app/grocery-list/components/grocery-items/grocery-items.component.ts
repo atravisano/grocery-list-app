@@ -4,7 +4,7 @@ import { MatSelectionList } from '@angular/material/list';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BehaviorSubject, catchError, combineLatest, Observable, of, switchMap, take, tap } from 'rxjs';
 import { SpinnerDialogComponent } from 'src/app/shared/components/spinner-dialog/spinner-dialog.component';
-import { GroceryItem } from '../../models/GroceryItem';
+import { GroceryItem } from '../../models/grocery-item';
 import { GroceryListService } from '../../services/grocery-list/grocery-list.service';
 
 @Component({

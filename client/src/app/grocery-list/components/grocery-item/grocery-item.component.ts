@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { GroceryItem } from '../../models/GroceryItem';
+import { GroceryItem } from '../../models/grocery-item';
 
 @Component({
   selector: 'app-grocery-item',

@@ -3,7 +3,7 @@ import { fakeAsync, TestBed } from '@angular/core/testing';
 import { GroceryListService } from './grocery-list.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { take } from 'rxjs';
-import { GroceryItem } from '../../models/GroceryItem';
+import { GroceryItem } from '../../models/grocery-item';
 
 describe('GroceryListService', () => {
   let service: GroceryListService;
