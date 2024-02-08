@@ -18,7 +18,7 @@ export class GroceryItemsComponent implements OnInit {
 
   public groceryList$!: Observable<GroceryItem[]>;
   public selectionCount$!: Observable<number>;
-  private selectionCountStream = new BehaviorSubject<number>(0);
+  private readonly selectionCountStream = new BehaviorSubject<number>(0);
 
   constructor(private groceryListService: GroceryListService,
               private snackBarService: MatSnackBar,
