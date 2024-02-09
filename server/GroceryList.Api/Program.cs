@@ -1,3 +1,4 @@
+using GroceryList.Business;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -30,7 +31,7 @@ builder.Services.AddSwaggerGen(options => {
 // Dependency Injection
 builder.Services.AddAutoMapper(typeof(Program).GetTypeInfo().Assembly);
 GroceryList.Domain.Startup.ConfigureServices(builder.Services, builder.Configuration);
-GroceryList.Business.Startup.ConfigureServices(builder.Services, builder.Configuration);
+builder.Services.AddBusinessServices();
 
 var app = builder.Build();
 
